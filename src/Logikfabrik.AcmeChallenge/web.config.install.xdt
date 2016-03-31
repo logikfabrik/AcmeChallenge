@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+	<configSections>
+		<section name="logikfabrik.acmeChallenge" type="Logikfabrik.AcmeChallenge.Configuration.Section, Logikfabrik.AcmeChallenge" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+	</configSections>
+    <system.webServer>
+	    <handlers>
+			<add verb="GET" path=".well-known/acme-challenge/*" name="AcmeChallengeHttpHandler" type="Logikfabrik.AcmeChallenge.AcmeChallengeHttpHandler, Logikfabrik.AcmeChallenge" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+		</handlers>
+    </system.webServer>
+</configuration>

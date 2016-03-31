@@ -1,0 +1,1 @@
+nuget pack Logikfabrik.AcmeChallenge\Logikfabrik.AcmeChallenge.csproj -Build -MSBuildVersion 14 -Prop Configuration=Release
