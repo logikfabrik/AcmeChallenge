@@ -1,0 +1,11 @@
+﻿<configuration>
+	<configSections>
+		<section name="logikfabrik.acmeChallenge" type="Logikfabrik.AcmeChallenge.Configuration.Section, Logikfabrik.AcmeChallenge" />
+	</configSections>
+    <system.webServer>
+	    <handlers>
+        <remove name="AcmeChallengeHttpHandler" />
+			  <add name="AcmeChallengeHttpHandler" verb="GET" path=".well-known/acme-challenge/*" type="Logikfabrik.AcmeChallenge.AcmeChallengeHttpHandler, Logikfabrik.AcmeChallenge" />
+		  </handlers>
+    </system.webServer>
+</configuration>
