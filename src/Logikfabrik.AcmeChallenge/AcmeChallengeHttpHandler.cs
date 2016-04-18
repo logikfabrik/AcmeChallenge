@@ -13,8 +13,15 @@ namespace Logikfabrik.AcmeChallenge
     /// </summary>
     public class AcmeChallengeHttpHandler : IHttpHandler
     {
+        /// <summary>
+        /// Gets a value indicating whether another request can use this <see cref="AcmeChallengeHttpHandler" /> instance.
+        /// </summary>
         public bool IsReusable => true;
 
+        /// <summary>
+        /// Processes of HTTP web requests.
+        /// </summary>
+        /// <param name="context">An <see cref="HttpContext" /> object that provides references to the intrinsic server objects used to service HTTP requests.</param>
         public void ProcessRequest(HttpContext context)
         {
             if (!ConfigurationManager.Enabled)
