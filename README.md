@@ -10,7 +10,7 @@ PM> Install-Package AcmeChallenge
 ## How To
 Add a AcmeChallenge reference to your web application. Request a `http-01` challenge from Let's Encrypt.
 
-Before responding to the `http-01` challenge, add token and payload to your `web.config`. Once your application is configured, Let's Encrypt can validate your challenge response, and issue your certificate.
+Before responding to the `http-01` challenge, add token and payload (the key authorization) to your `web.config`. Once your application is configured, Let's Encrypt can validate your challenge response, and issue your certificate.
 
 ```xml
 <configSections>
@@ -21,4 +21,10 @@ Before responding to the `http-01` challenge, add token and payload to your `web
         <add token="" payload="" />
     </tokens>
 </logikfabrik.acmeChallenge>
+<system.webServer>
+    <handlers>
+        <remove name="AcmeChallengeHttpHandler" />
+        <add name="AcmeChallengeHttpHandler" verb="GET" path=".well-known/acme-challenge/*" type="Logikfabrik.AcmeChallenge.AcmeChallengeHttpHandler, Logikfabrik.AcmeChallenge" />
+    </handlers>
+</system.webServer>
 ```
