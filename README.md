@@ -28,3 +28,8 @@ Before responding to the `http-01` challenge, add token and payload (the key aut
     </handlers>
 </system.webServer>
 ```
+
+## Contributions
+AcmeChallenge is Open Source (MIT), and you’re welcome to contribute!
+
+If you have a bug report, feature request, or suggestion, please open a new issue. To submit a patch, please send a pull request.
